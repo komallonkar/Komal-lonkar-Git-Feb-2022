@@ -1,0 +1,38 @@
+git init
+on branch master
+    -> echo "one" > one.txt
+    -> echo "two" > two.txt
+    -> echo "three" > three.txt
+    git status
+    git add .
+    git commit -m "initial commit" 
+    git checkout Dev
+
+on branch Dev   
+    -> echo "writing from dev branch dev" >> one.txt
+    git status
+    git add .
+    git commit -m "commit from dev branch"
+    git checkout test
+
+on branch Test
+    -> echo "from branch test" >> two.txt
+    -> echo "from branch test" >> three.txt
+    git status
+    git add .
+    git commit -m "commit from test branch"
+    git checkout Dev
+
+on branch Dev
+    -> echo "more change to check diff" >> one.txt
+    git diff
+    git add one.txt
+    git commit -m ""commit from dev branch for checking diff"
+    git checkout master
+
+on branch master
+    git merge Dev
+    git merge Test
+    git status 
+    git add assignment-steps.txt
+    git commit -m "added solution text file"
